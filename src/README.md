@@ -14,6 +14,7 @@ It demonstrates:
 - Generic authentication failures
 - Safe login response
 - Structured audit events for login success, failure, and lockout
+- In-memory scheduler retry policy for retryable and non-retryable job failures
 
 The password hasher and token issuer are intentionally demo-only. Production applications should use ASP.NET Core Identity or another approved authentication stack with adaptive password hashing and signed tokens.
 

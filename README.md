@@ -25,7 +25,9 @@ This repository includes a minimal .NET reference API that demonstrates the AI O
 
 - App: `src/reference-api`
 - Tests: `tests/reference-api-tests`
-- Golden-path record: `examples/golden-path-login-reference.md`
+- Golden-path records:
+  - `examples/golden-path-login-reference.md`
+  - `examples/golden-path-scheduler-retry-reference.md`
 - Feature SPEC: `docs/specs/features/LOGIN.md`
 - Module SPECs: `docs/specs/modules/AUTH_SPEC.md` and `docs/specs/modules/AUDIT_LOG_SPEC.md`
 

@@ -14,6 +14,7 @@ It covers:
 - Locked and disabled account behavior
 - Standard error envelope shape
 - Safe audit event emission
+- Scheduler retry policy, retry exhaustion, duplicate suppression, and safe scheduler events
 
 Run from the repository root:
 

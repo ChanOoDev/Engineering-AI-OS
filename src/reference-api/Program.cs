@@ -1,12 +1,15 @@
 using ReferenceApi.Audit;
 using ReferenceApi.Auth;
 using ReferenceApi.Errors;
+using ReferenceApi.Scheduler;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSingleton<IUserStore, InMemoryUserStore>();
 builder.Services.AddSingleton<IAuditSink, InMemoryAuditSink>();
 builder.Services.AddSingleton<AuthService>();
+builder.Services.AddSingleton<ISchedulerEventSink, InMemorySchedulerEventSink>();
+builder.Services.AddSingleton<SchedulerService>();
 
 var app = builder.Build();
 
