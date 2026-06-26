@@ -25,9 +25,12 @@ public sealed class SchedulerService(ISchedulerEventSink eventSink)
         {
             _executions.TryRemove(execution.ExecutionId, out _);
 
-            return new JobRunResult(
-                _executions[_runningExecutionIdsByJob[definition.JobId]],
-                DuplicateSuppressed: true);
+            if (TryGetRunningExecution(definition.JobId, out var runningExecution))
+            {
+                return new JobRunResult(runningExecution, DuplicateSuppressed: true);
+            }
+
+            return Start(definition, correlationId);
         }
 
         eventSink.Record(SchedulerEvent.Create(
@@ -157,9 +160,12 @@ public sealed class SchedulerService(ISchedulerEventSink eventSink)
         {
             _executions.TryRemove(execution.ExecutionId, out _);
 
-            return new JobRunResult(
-                _executions[_runningExecutionIdsByJob[definition.JobId]],
-                DuplicateSuppressed: true);
+            if (TryGetRunningExecution(definition.JobId, out var runningExecution))
+            {
+                return new JobRunResult(runningExecution, DuplicateSuppressed: true);
+            }
+
+            return StartRetry(definition, previousExecution, correlationId);
         }
 
         eventSink.Record(SchedulerEvent.Create(
@@ -171,5 +177,18 @@ public sealed class SchedulerService(ISchedulerEventSink eventSink)
             null));
 
         return new JobRunResult(execution, DuplicateSuppressed: false);
+    }
+
+    private bool TryGetRunningExecution(string jobId, out JobExecution execution)
+    {
+        if (_runningExecutionIdsByJob.TryGetValue(jobId, out var runningExecutionId) &&
+            _executions.TryGetValue(runningExecutionId, out var runningExecution))
+        {
+            execution = runningExecution;
+            return true;
+        }
+
+        execution = default!;
+        return false;
     }
 }
