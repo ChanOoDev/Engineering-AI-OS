@@ -1,0 +1,5 @@
+{
+  "framework": ".ai",
+  "read_first": ["AI_OS.md", "CLAUDE.md", ".ai/config/coding-rules.md"],
+  "approval_required": true
+}
