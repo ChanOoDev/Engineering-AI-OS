@@ -18,7 +18,7 @@ Use this workflow for pull requests, patch review, or pre-merge self-review. The
 - Backend, Frontend, Database, or DevOps: reviews domain-specific risks when touched
 - Documentation: checks docs, runbooks, and examples when behavior changes
 
-## Review Order
+## Flow
 
 1. Context Check
    - Identify approved scope and intended behavior.

@@ -28,6 +28,15 @@ Fix a confirmed defect using the bug-fix workflow.
 7. Verify reproduction and targeted tests.
 8. Summarize fix, verification, residual risk, and release notes.
 
+## Output Format
+
+- Bug summary
+- Root cause
+- Fix implemented
+- Regression tests
+- Verification
+- Risks and release notes
+
 ## Stop Conditions
 
 - Expected behavior is unknown.

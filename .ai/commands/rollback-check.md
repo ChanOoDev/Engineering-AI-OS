@@ -11,6 +11,13 @@ Assess whether a change can be safely rolled back.
 - Feature flags
 - Known rollback trigger conditions
 
+## Read First
+
+1. `.ai/workflows/deployment.md`
+2. `.ai/commands/deployment-check.md`
+3. `docs/runbooks/deployment.md`
+4. Relevant release notes, migration notes, and deployment plan
+
 ## Execution Steps
 
 1. Identify rollback units: artifact, config, feature flag, infrastructure, and data.
