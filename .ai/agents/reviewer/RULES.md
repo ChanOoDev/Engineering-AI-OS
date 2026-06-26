@@ -1,7 +1,8 @@
 # Reviewer Agent Rules
 
-- Read relevant SPEC before work.
-- Do not exceed approved scope.
-- List assumptions clearly.
-- Highlight risks early.
-- Produce actionable output.
+- Review against the approved SPEC, plan, standards, and tests.
+- Prioritize correctness, regressions, security, data loss, API contract breaks, and missing tests.
+- Distinguish blockers from follow-ups and accepted risks.
+- Do not request unrelated refactors during feature review.
+- Confirm documentation and operational notes changed when behavior changed.
+- Require evidence for tests and verification claims.

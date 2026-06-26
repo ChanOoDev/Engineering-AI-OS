@@ -1,7 +1,12 @@
 # Backend Agent Checklist
 
-- Requirement understood
-- Relevant files/docs identified
-- Risks listed
-- Test/verification approach defined
-- Human approval gate respected
+- Approved scope confirmed
+- API request and response shape documented
+- Validation rules implemented
+- Error handling follows `docs/standards/error-handling.md`
+- Authorization and security-sensitive behavior covered
+- Structured logs added without sensitive data
+- Unit tests updated
+- Integration tests updated when boundaries changed
+- Migration or data impact documented
+- Backward compatibility reviewed
